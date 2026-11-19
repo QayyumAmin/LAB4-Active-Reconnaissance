@@ -8,6 +8,7 @@ The setup consists of two separate environments: Windows, which acts as the vict
 Oracle VirtualBox was used to run Kali Linux, while XAMPP was used to host the DVWA web application on Windows. 
 Both machines were connected through a VirtualBox Host-only network to allow communication within an isolated laboratory environment.
 
+
 1.2 LABORATORY ENVINRONMENT
 
 | Component | Description |
@@ -20,6 +21,7 @@ Both machines were connected through a VirtualBox Host-only network to allow com
 | Vulnerable Application | DVWA |
 | Reconnaissance Tool | Nmap |
 | Network Mode | Host-only Adapter |
+
 
 1.3 VICTIM MACHINE SETUP ( WINDOWS )
 
@@ -47,6 +49,7 @@ Victim Machine Network Configuration:
 | Application | DVWA |
 | Web Server | Apache |
 | Database Server | MySQL |
+
 
 1.4 MACHINE SETUP KALI LINUX
 
@@ -79,6 +82,7 @@ The following steps were performed:
 | Network Mode | Host-only Adapter |
 | Reconnaissance Tool | Nmap |
 
+
 1.5 NETWORK CONNECTIVITY VERIFICATION
 
 After configuring both environments, network connectivity was tested to ensure that the attacker machine could communicate with the victim machine.
@@ -94,6 +98,7 @@ http://192.168.56.1/DVWA/
 <img width="1920" height="983" alt="Screenshot_2026-11-19_21_56_26" src="https://github.com/user-attachments/assets/17196d6c-765d-4de7-bd0b-9f1452c70c11" />
 
 The DVWA dashboard was successfully displayed, confirming that the web application was accessible from the attacker environment.
+
 
 1.6 ASSIGNED NETWORK CONFIGURATION
 
@@ -126,6 +131,7 @@ This section describes the identification of the attacker machine and the discov
 
 The purpose of this activity was to identify the available hosts before proceeding with network service detection.
 
+
 2.2 ATTACKER HOST IDENTIFICATION 
 
 The attacker machine used in this activity was Kali Linux. The network configuration was examined using Linux networking commands to identify the machine's hostname, network interface and assigned IP address.
@@ -141,6 +147,7 @@ The attacker machine used in this activity was Kali Linux. The network configura
 | Network Mode | Host-only Adapter |
 | Role | Attacker |
 
+
 2.3 NMAP HOST DISCOVERY
 
 Command used
@@ -148,6 +155,7 @@ Command used
 sudo nmap -sn 192.168.56.0/24
 
 <img width="1920" height="983" alt="Screenshot_2026-11-19_22_00_32" src="https://github.com/user-attachments/assets/93055b74-b37a-4e9c-8c51-c7c88854b31b" />
+
 
 2.4 DISCOVERY HOST
 
@@ -169,6 +177,7 @@ Scan Summary :
 | Scan Duration | Approximately 1.9 seconds |
 | Scan Status | Successful |
 
+
 2.5 INTERPRETATION OF FINDING
 
 The Nmap host discovery scan successfully identified three active hosts within the laboratory network.
@@ -186,6 +195,7 @@ PART 3 - SERVICES AND INTERPRETATION
 
 This section focuses on identifying the network services and open TCP ports available on the target machine. Nmap service version detection was used to examine the services running on the Windows victim machine hosting the Damn Vulnerable Web Application (DVWA).
 
+
 3.2 PERFORM NMAP SERVICE DETECTION
 
 Step 1 - Scan HTTP and HTTPS ports
@@ -195,6 +205,7 @@ Step 3 - View the save result
 <img width="1920" height="983" alt="Screenshot_2026-11-19_22_01_11" src="https://github.com/user-attachments/assets/62600906-90de-4365-986c-936046b68fd7" />
 
 <img width="1920" height="983" alt="Screenshot_2026-11-19_23_13_40" src="https://github.com/user-attachments/assets/98b74172-304a-424c-8ad5-2b87b5a9f8c6" />
+
 
 3.3 FINDINGS TABLE
 
@@ -226,6 +237,7 @@ There are several limitations during the active reconnaissance activity:
 
 4. **Service Version Accuracy:** Nmap service detection provides estimated software and version information. The results may require further verification.
 
+
 4.2 Risks
 
 Active reconnaissance involves sending packets and requests directly to the target machine. The following risks should be considered:
@@ -237,6 +249,7 @@ Active reconnaissance involves sending packets and requests directly to the targ
 3. **Security Monitoring Alerts:** Active scanning activities may trigger firewall alerts or intrusion detection systems.
 
 4. **Unauthorized Access:** Scanning systems without permission may violate organisational policies or legal requirements.
+
 
 4.3 Mitigation Measures
 
