@@ -1,0 +1,24 @@
+# PART 2 – OWN HOST & DISCOVERED HOSTS
+
+## 2.1 INTRODUCTION
+
+This section describes the identification of the attacker machine and the discovery of active hosts within the assigned laboratory network. 
+Nmap was used to perform host discovery to identify devices that were active and responding within the network range.
+
+The purpose of this activity was to identify the available hosts before proceeding with network service detection.
+
+2.2 ATTACKER HOST 
+
+The attacker machine used in this activity was Kali Linux. 
+The network configuration was examined using Linux networking commands to identify the machine's hostname, network interface and assigned IP address.
+
+
+
+| Configuration | Result |
+|---|---|
+| Operating System | Kali Linux |
+| Network Interface | eth1 |
+| Attacker IP Address | 192.168.56.102 |
+| Network CIDR | 192.168.56.0/24 |
+| Network Mode | Host-only Adapter |
+| Role | Attacker |
